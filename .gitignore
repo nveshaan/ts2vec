@@ -5,3 +5,4 @@ training/*
 scripts/_nohup
 .rsync-filter
 *.csv
+.DS_Store

@@ -5,7 +5,8 @@ from ts2vec import TS2Vec
 
 device = 'mps'
 
-data = pd.read_csv('btcusd_ta.csv').to_numpy()[3668959:, 1:]
+# data = pd.read_csv('btcusd_ta.csv').to_numpy()[3668959:, 1:]
+data = np.load('data/btc_test.npy')
 data = data[: (len(data) // 300) * 300].reshape(-1, 300, data.shape[1])
 # Per-instance min-max normalization (scales each sample to [0, 1])
 min_vals = np.nanmin(data, axis=1, keepdims=True)
